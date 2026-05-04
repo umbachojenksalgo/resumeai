@@ -24,12 +24,12 @@ const templates = [
 ];
 
 const themeColors = [
-  { value: "#2563eb", label: "蓝色" },
-  { value: "#059669", label: "绿色" },
+  { value: "#000000", label: "黑色" },
+  { value: "#171717", label: "深灰" },
+  { value: "#525252", label: "中灰" },
+  { value: "#737373", label: "浅灰" },
+  { value: "#a3a3a3", label: "银灰" },
   { value: "#dc2626", label: "红色" },
-  { value: "#7c3aed", label: "紫色" },
-  { value: "#ea580c", label: "橙色" },
-  { value: "#0891b2", label: "青色" },
 ];
 
 export default function WebifyPage() {
@@ -127,9 +127,9 @@ export default function WebifyPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">简历网页化</h1>
-        <p className="mt-2 text-muted-foreground">将简历转换为精美的在线网页，一键分享</p>
+      <div className="mb-10">
+        <h1 className="text-3xl font-bold tracking-tight">简历网页化</h1>
+        <p className="mt-2 text-sm text-muted-foreground">将简历转换为精美的在线网页，一键分享</p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>

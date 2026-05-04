@@ -163,18 +163,18 @@ export default function OptimizePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">AI 简历优化</h1>
-        <p className="mt-2 text-muted-foreground">上传简历，AI 帮你全方位优化</p>
+      <div className="mb-10">
+        <h1 className="text-3xl font-bold tracking-tight">AI 简历优化</h1>
+        <p className="mt-2 text-sm text-muted-foreground">上传简历，AI 帮你全方位优化</p>
       </div>
 
-      <div className="mb-6 flex flex-wrap items-center gap-4">
+      <div className="mb-8 flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium">AI 模型</span>
+          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">AI 模型</span>
           <ModelSelector value={model} onChange={setModel} feature="optimize" />
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium">目标岗位</span>
+          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">目标岗位</span>
           <Input
             placeholder="如：前端工程师"
             value={targetJob}
@@ -183,12 +183,12 @@ export default function OptimizePage() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium">优化重点</span>
+          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">优化重点</span>
           {focusOptions.map((opt) => (
             <Badge
               key={opt.value}
               variant={focus.includes(opt.value) ? "default" : "outline"}
-              className="cursor-pointer"
+              className="cursor-pointer text-xs"
               onClick={() => toggleFocus(opt.value)}
             >
               {opt.label}

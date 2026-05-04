@@ -42,24 +42,24 @@ export function ChatInterface({ messages, onSendMessage, isLoading }: ChatInterf
         <div className="space-y-4">
           {messages.map((msg, i) => (
             <div
-              key={i}
-              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+            key={i}
+            className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+          >
+            <div
+              className={`max-w-[80%] rounded-lg px-4 py-2.5 text-sm leading-relaxed ${
+                msg.role === "user"
+                  ? "bg-foreground text-background"
+                  : "bg-secondary"
+              }`}
             >
-              <div
-                className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
-                  msg.role === "user"
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted"
-                }`}
-              >
-                <div className="whitespace-pre-wrap">{msg.content}</div>
-              </div>
+              <div className="whitespace-pre-wrap">{msg.content}</div>
             </div>
+          </div>
           ))}
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-muted rounded-2xl px-4 py-2.5 text-sm">
-                <div className="flex gap-1">
+              <div className="bg-secondary rounded-lg px-4 py-2.5 text-sm">
+                <div className="flex gap-1 text-muted-foreground">
                   <span className="animate-bounce">●</span>
                   <span className="animate-bounce" style={{ animationDelay: "0.1s" }}>●</span>
                   <span className="animate-bounce" style={{ animationDelay: "0.2s" }}>●</span>

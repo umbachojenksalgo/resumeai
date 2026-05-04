@@ -2,7 +2,7 @@ export const runtime = "edge";
 
 import { NextRequest } from "next/server";
 import { kvGet } from "@/lib/kv";
-import { renderMinimalTemplate } from "@/components/templates/minimal";
+import { renderTemplate } from "@/components/templates";
 
 export async function GET(
   req: NextRequest,
@@ -20,7 +20,7 @@ export async function GET(
       return new Response("简历不存在或已过期", { status: 404 });
     }
 
-    const html = renderMinimalTemplate(data.resume, data.themeColor);
+    const html = renderTemplate(data.templateId, data.resume, data.themeColor);
 
     return new Response(html, {
       headers: {

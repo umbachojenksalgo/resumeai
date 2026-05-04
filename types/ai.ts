@@ -4,7 +4,7 @@ export interface AIModel {
   provider: string;
   description: string;
   maxTokens: number;
-  supportedFeatures: ("optimize" | "roast" | "extract")[];
+  supportedFeatures: ("optimize" | "roast" | "extract" | "generate")[];
 }
 
 export interface ChatParams {
@@ -39,7 +39,7 @@ export const AI_PROVIDERS: AIProviderConfig[] = [
         provider: "openai",
         description: "OpenAI 最强模型，适合复杂简历分析",
         maxTokens: 128000,
-        supportedFeatures: ["optimize", "roast", "extract"],
+        supportedFeatures: ["optimize", "roast", "extract", "generate"],
       },
       {
         id: "gpt-4o-mini",
@@ -47,7 +47,7 @@ export const AI_PROVIDERS: AIProviderConfig[] = [
         provider: "openai",
         description: "轻量快速，适合简单优化",
         maxTokens: 128000,
-        supportedFeatures: ["optimize", "roast", "extract"],
+        supportedFeatures: ["optimize", "roast", "extract", "generate"],
       },
     ],
   },
@@ -61,7 +61,7 @@ export const AI_PROVIDERS: AIProviderConfig[] = [
         provider: "anthropic",
         description: "长文本理解优秀，适合简历深度分析",
         maxTokens: 200000,
-        supportedFeatures: ["optimize", "roast", "extract"],
+        supportedFeatures: ["optimize", "roast", "extract", "generate"],
       },
     ],
   },
@@ -76,7 +76,7 @@ export const AI_PROVIDERS: AIProviderConfig[] = [
         provider: "deepseek",
         description: "国产高性价比模型",
         maxTokens: 64000,
-        supportedFeatures: ["optimize", "roast", "extract"],
+        supportedFeatures: ["optimize", "roast", "extract", "generate"],
       },
     ],
   },
@@ -91,7 +91,7 @@ export const AI_PROVIDERS: AIProviderConfig[] = [
         provider: "qwen",
         description: "阿里云大模型，国内直连",
         maxTokens: 128000,
-        supportedFeatures: ["optimize", "roast", "extract"],
+        supportedFeatures: ["optimize", "roast", "extract", "generate"],
       },
     ],
   },
@@ -106,7 +106,7 @@ export const AI_PROVIDERS: AIProviderConfig[] = [
         provider: "mimo",
         description: "小米大模型，快速高效",
         maxTokens: 65536,
-        supportedFeatures: ["optimize", "roast", "extract"],
+        supportedFeatures: ["optimize", "roast", "extract", "generate"],
       },
       {
         id: "mimo-v2-pro",
@@ -114,7 +114,7 @@ export const AI_PROVIDERS: AIProviderConfig[] = [
         provider: "mimo",
         description: "小米大模型，深度推理",
         maxTokens: 65536,
-        supportedFeatures: ["optimize", "roast", "extract"],
+        supportedFeatures: ["optimize", "roast", "extract", "generate"],
       },
     ],
   },

@@ -100,3 +100,33 @@ export interface RoastSession {
   model: string;
   createdAt: number;
 }
+
+export interface GenerateInput {
+  name: string;
+  targetJob: string;
+  experience: string;
+  skills: string;
+  education?: string;
+  email?: string;
+  phone?: string;
+  location?: string;
+}
+
+export interface JdMatchInput {
+  jd: string;
+  resume: ResumeData;
+}
+
+export interface JdMatchAnalysis {
+  matchedKeywords: string[];
+  missingKeywords: string[];
+  matchedResponsibilities: string[];
+  gapAnalysis: string[];
+}
+
+export interface JdMatchResult {
+  matchScore: number;
+  matchAnalysis: JdMatchAnalysis;
+  tailoredResume: ResumeData;
+  suggestions: string[];
+}

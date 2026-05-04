@@ -80,10 +80,10 @@ export function Dropzone({ onFileAccepted, isLoading }: DropzoneProps) {
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         className={`
-          relative flex flex-col items-center justify-center rounded-xl border-2 border-dashed
+          relative flex flex-col items-center justify-center rounded-lg border-2 border-dashed
           p-12 transition-colors cursor-pointer
-          ${isDragOver ? "border-primary bg-primary/5" : "border-muted-foreground/25 hover:border-primary/50"}
-          ${isLoading ? "pointer-events-none opacity-50" : ""}
+          ${isDragOver ? "border-foreground bg-secondary" : "border-muted-foreground/20 hover:border-foreground/40"}
+          ${isLoading ? "pointer-events-none opacity-40" : ""}
         `}
       >
         <input
@@ -94,11 +94,11 @@ export function Dropzone({ onFileAccepted, isLoading }: DropzoneProps) {
           disabled={isLoading}
         />
         <div className="flex flex-col items-center gap-4 text-center">
-          <div className="rounded-full bg-primary/10 p-4">
+          <div className="rounded-full bg-secondary p-4">
             {isLoading ? (
-              <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+              <div className="h-8 w-8 animate-spin rounded-full border-2 border-foreground border-t-transparent" />
             ) : (
-              <Upload className="h-8 w-8 text-primary" />
+              <Upload className="h-8 w-8 text-foreground" />
             )}
           </div>
           <div>

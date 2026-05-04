@@ -12,7 +12,7 @@ import { getAllModels } from "@/types/ai";
 interface ModelSelectorProps {
   value: string;
   onChange: (value: string) => void;
-  feature?: "optimize" | "roast" | "extract";
+  feature?: "optimize" | "roast" | "extract" | "generate";
 }
 
 export function ModelSelector({ value, onChange, feature }: ModelSelectorProps) {

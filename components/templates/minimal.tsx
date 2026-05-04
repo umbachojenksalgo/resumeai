@@ -1,7 +1,7 @@
 import type { ResumeData } from "@/types/resume";
 
 export function renderMinimalTemplate(resume: ResumeData, themeColor?: string): string {
-  const color = themeColor || "#2563eb";
+  const color = themeColor || "#000000";
   const { personal, summary, experience, education, projects, skills } = resume;
 
   return `<!DOCTYPE html>

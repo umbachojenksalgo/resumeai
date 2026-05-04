@@ -15,9 +15,9 @@ import { parseDocxClientSide } from "@/lib/parser/docx";
 import type { ResumeData, DifficultyLevel, ChatMessage } from "@/types/resume";
 
 const difficultyOptions: { value: DifficultyLevel; label: string; description: string; color: string }[] = [
-  { value: "gentle", label: "温和", description: "引导式提问，温和有建设性", color: "bg-green-100 text-green-800" },
-  { value: "standard", label: "标准", description: "模拟真实面试，专业追问", color: "bg-yellow-100 text-yellow-800" },
-  { value: "hell", label: "地狱", description: "极限施压，暴露所有弱点", color: "bg-red-100 text-red-800" },
+  { value: "gentle", label: "温和", description: "引导式提问，温和有建设性", color: "bg-secondary text-foreground" },
+  { value: "standard", label: "标准", description: "模拟真实面试，专业追问", color: "bg-muted text-foreground" },
+  { value: "hell", label: "地狱", description: "极限施压，暴露所有弱点", color: "bg-foreground text-background" },
 ];
 
 export default function RoastPage() {
@@ -158,23 +158,23 @@ export default function RoastPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">AI 拷打简历</h1>
-        <p className="mt-2 text-muted-foreground">模拟面试场景，AI 对你的简历进行犀利拷问</p>
+      <div className="mb-10">
+        <h1 className="text-3xl font-bold tracking-tight">AI 拷打简历</h1>
+        <p className="mt-2 text-sm text-muted-foreground">模拟面试场景，AI 对你的简历进行犀利拷问</p>
       </div>
 
-      <div className="mb-6 flex flex-wrap items-center gap-4">
+      <div className="mb-8 flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium">AI 模型</span>
+          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">AI 模型</span>
           <ModelSelector value={model} onChange={setModel} feature="roast" />
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium">难度</span>
+          <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">难度</span>
           {difficultyOptions.map((opt) => (
             <Badge
               key={opt.value}
               variant={difficulty === opt.value ? "default" : "outline"}
-              className="cursor-pointer"
+              className="cursor-pointer text-xs"
               onClick={() => setDifficulty(opt.value)}
             >
               {opt.label}
